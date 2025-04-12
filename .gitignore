@@ -1,3 +1,9 @@
 .DS_Store
 __pycache__
 .env
+
+# Rust
+/samples/rust/target/
+/samples/rust/Cargo.lock
+**/*.rs.bk
+*.pdb

@@ -1,0 +1,43 @@
+[package]
+name = "a2a-rust"
+version = "0.1.0"
+edition = "2021"
+description = "Rust implementation of the Agent2Agent (A2A) protocol"
+license = "Apache-2.0"
+
+[dependencies]
+tokio = { version = "1.36.0", features = ["full", "test-util"] }
+axum = "0.8.3"
+serde = { version = "1.0.197", features = ["derive"] }
+serde_json = "1.0.114"
+chrono = { version = "0.4.35", features = ["serde"] }
+uuid = { version = "1.7.0", features = ["v4", "serde"] }
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+reqwest = { version = "0.12.15", features = ["json"] }
+thiserror = "2.0"
+async-trait = "0.1.77"
+tower-http = { version = "0.6.2", features = ["cors", "trace"] }
+clap = { version = "4.5.2", features = ["derive"] }
+tower = { version = "0.5.2", features = ["util"] }
+hyper = { version = "1.1.0", features = ["full"] }
+dotenv = "0.15.0"
+anyhow = "1.0.81"
+futures = "0.3.31"
+
+[dev-dependencies]
+rstest = "0.25.0"
+mockito = "1.2.0"
+tokio-test = "0.4.3"
+
+[[bin]]
+name = "a2a-server"
+path = "src/bin/server.rs"
+
+[[bin]]
+name = "a2a-client"
+path = "src/bin/client.rs"
+
+[[bin]]
+name = "openai_agent"
+path = "src/bin/openai_agent.rs"
